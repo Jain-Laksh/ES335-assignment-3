@@ -72,7 +72,7 @@ class NextChar(nn.Module):
 model = NextChar(block_size, 11189, embedding_dim, hidden_layer_size)
 
 # old_path = /Users/na/Machine Learning Assignment/Assignment-3/models_notebooks/models/model_{block_size}_{embedding_dim}_{hidden_layer_size}_{activation[0]}.pth
-state_model = torch.load(f"/models_notebooks/models/model_{block_size}_{embedding_dim}_{hidden_layer_size}_{activation[0]}.pth", map_location=torch.device('cpu'))
+state_model = torch.load(f"/question1/models_notebooks/models/model_{block_size}_{embedding_dim}_{hidden_layer_size}_{activation[0]}.pth", map_location=torch.device('cpu'))
 
 new_state_dict = {key.replace("_orig_mod.", ""): value for key, value in state_model.items()}
 
