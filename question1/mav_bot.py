@@ -78,7 +78,8 @@ new_state_dict = {key.replace("_orig_mod.", ""): value for key, value in state_m
 
 model.load_state_dict(new_state_dict)
 
-i_s = pd.read_csv('/Users/na/Machine Learning Assignment/Assignment-3/itos.csv')
+# /Users/na/Machine Learning Assignment/Assignment-3/itos.csv
+i_s = pd.read_csv('question1/itos.csv')
 i = i_s['i']
 s = i_s['s']
 stoi = {sx:ix for ix,sx in zip(i,s)}
