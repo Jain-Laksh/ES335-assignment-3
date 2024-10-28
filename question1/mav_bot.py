@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import time
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import torch
 import pandas as pd
 from torch import nn
@@ -69,12 +69,10 @@ class NextChar(nn.Module):
         return x 
     
 
-
-
-
 model = NextChar(block_size, 11189, embedding_dim, hidden_layer_size)
 
-state_model = torch.load(f"/Users/na/Machine Learning Assignment/Assignment-3/models_notebooks/models/model_{block_size}_{embedding_dim}_{hidden_layer_size}_{activation[0]}.pth", map_location=torch.device('cpu'))
+# old_path = /Users/na/Machine Learning Assignment/Assignment-3/models_notebooks/models/model_{block_size}_{embedding_dim}_{hidden_layer_size}_{activation[0]}.pth
+state_model = torch.load(f"/models_notebooks/models/model_{block_size}_{embedding_dim}_{hidden_layer_size}_{activation[0]}.pth", map_location=torch.device('cpu'))
 
 new_state_dict = {key.replace("_orig_mod.", ""): value for key, value in state_model.items()}
 
